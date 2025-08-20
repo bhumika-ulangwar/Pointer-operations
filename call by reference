@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+void swap(int x, int y) {
+int temp = x;
+x = y;
+y = temp;
+
+}
+
+int main() {
+int a, b;
+
+cout << "Enter the first number: ";
+cin >> a;
+cout << "Enter the second number: ";
+cin >> b;
+
+cout << endl<<"--- Before swapping ---" << endl;
+cout << "Value of a: " << a << endl;
+cout << "Value of b: " << b << endl;
+
+swap(a, b);
+
+cout <<endl<< "--- After swapping ---" << endl;
+cout << "Value of a: " << a << endl;
+cout << "Value of b: " << b << endl;
+
+return 0;
+}
+
+/* output
+Enter the first number: 13
+Enter the second number: 18
+
+--- Before swapping ---
+Value of a: 13
+Value of b: 18
+
+--- After swapping ---
+Value of a: 13
+Value of b: 18
