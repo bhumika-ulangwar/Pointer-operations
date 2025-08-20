@@ -1,0 +1,64 @@
+#include <iostream>
+using namespace std ;
+
+int bonus (int* current_salary){
+*current_salary=*current_salary+0.2*(*current_salary);
+return 0 ;
+}
+
+int main (){
+int years_completed ,research_projects,new_research_projects,company_profit,current_salary;
+
+
+cout<<"Enter the number of years completed at the company : ";
+cin>>years_completed;
+
+cout << "Enter the number of research projects completed: ";
+cin >> research_projects;
+
+cout<<"Enter the number of new research projects in pipeline : ";
+cin>>new_research_projects;
+
+cout<<"Enter the amount of profit the company made through your work ; ";
+cin>>company_profit;
+
+
+int conditions_met = 0 ;
+if (years_completed > 1) {
+conditions_met++;
+}
+if (research_projects >= 1) {
+conditions_met++;
+}
+if (new_research_projects >= 1) {
+conditions_met++;
+}
+if (company_profit > 100000) {
+conditions_met++;
+}
+
+if (conditions_met >= 3){
+
+cout << "Congratulations! You are eligible for a 20% salary hike." << endl;
+cout << "Enter your current salary: ";
+cin >> current_salary;
+
+
+bonus(&current_salary);
+cout << "Your new salary is: " << current_salary << endl;
+} 
+else {
+cout << "You are not eligible for a salary hike at this time." ;
+}
+
+
+return 0 ;
+}
+/* output 
+Enter the number of years completed at the company : 3
+Enter the number of research projects completed: 5
+Enter the number of new research projects in pipeline : 2
+Enter the amount of profit the company made through your work ; 1000
+Congratulations! You are eligible for a 20% salary hike.
+Enter your current salary: 35000
+Your new salary is: 42000
