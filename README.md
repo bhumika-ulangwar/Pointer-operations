@@ -1,88 +1,76 @@
-# Pointer-operations
-Aim
+##  Aim
+To study and implement pointer operations (*call by reference* and *call by value*) in C++.
 
-To study and implement pointer operations (call by refernce and call by value) in C++.
-Tools
+---
 
-Visual Studio Code
-Theory
-Call by Value:
+##  Tools
+- *Visual Studio Code*
+- C++ Compiler (G++/MSVC)
 
-Mechanism: When an argument is passed by value, a copy of the actual argument's value is made and passed to the function's formal parameter. Effect on Original Data: Any modifications made to the formal parameter within the function do not affect the original variable in the calling scope, as the function operates on a separate copy. Syntax: Standard parameter declaration (e.g., void func(int x)).
-Call by Reference:
+---
 
-Mechanism: When an argument is passed by reference, the address (or a reference/alias) of the actual argument is passed to the function's formal parameter. This means the formal parameter directly refers to the same memory location as the original variable. Effect on Original Data: Modifications made to the formal parameter within the function do affect the original variable in the calling scope, as both refer to the same data. Syntax: Using the reference operator (&) in the parameter declaration (e.g., void func(int& x)). Alternatively, passing a pointer to the variable allows for similar behavior, where the pointer holds the address of the original variable.
-image
-Algorithms
-Swapping numbers using Call by Value
+##  Theory
 
-    Start.
+### Call by Value
+- *Mechanism*: A copy of the actual argument’s value is passed to the function.  
+- *Effect on Original Data: Changes inside the function **do not affect* the original variables.  
+- *Syntax*:  
+  cpp
+  void func(int x);
+  
 
-    Input two numbers a and b.
+### Call by Reference
+- *Mechanism*: The function receives a reference (alias) or pointer to the variable, pointing to the same memory location.  
+- *Effect on Original Data: Changes inside the function **directly affect* the original variables.  
+- *Syntax*:  
+  cpp
+  void func(int& x);   // using reference
+  void func(int* x);   // using pointer
+  
 
-    Call swap(x, y) (values passed).
+---
 
-    Swap occurs inside function but does not affect original variables.
+##  Algorithms
 
-    Print values (remain unchanged).
+### 1. Swapping numbers using Call by Value
+1. Start  
+2. Input two numbers a and b  
+3. Call swap(a, b) (values passed)  
+4. Swap occurs inside the function but *does not affect* original values  
+5. Print original values (unchanged)  
+6. End  
 
-    End.
+### 2. Swapping numbers using Call by Reference
+1. Start  
+2. Input two numbers a and b  
+3. Call swap(&a, &b) (address passed)  
+4. Swap occurs and *affects* original variables  
+5. Print swapped values  
+6. End  
 
-Swapping numbers using call by reference
+### 3. Reversing a String
+1. Start  
+2. Input a string  
+3. Find its length  
+4. Swap characters from start and end, moving towards the center  
+5. Print reversed string  
+6. End  
 
-    Start.
+### 4. Salary Hike Program
+1. Start  
+2. Input: years completed, research projects, new projects, company profit  
+3. Initialize conditions_met = 0  
+4. Check conditions:  
+   - If years > 1 → increment  
+   - If research projects ≥ 1 → increment  
+   - If new projects ≥ 1 → increment  
+   - If profit > 100000 → increment  
+5. If conditions_met ≥ 3 → Input salary and increase by *20%*  
+6. Else → Print "Not eligible for salary hike"  
+7. End  
 
-    Input two numbers a and b.
+---
 
-    Use a function swap(&x, &y) with references.
-
-    Store x in temp.
-
-    Assign y to x.
-
-    Assign temp to y.
-
-    Print swapped values (original variables get swapped).
-
-    End.
-
-Reversing a string
-
-    Start.
-
-    Input a string.
-
-    Count its length.
-
-    Swap characters from start and end moving towards the center.
-
-    Print the reversed string.
-
-    End.
-
-Salary hike
-
-    Start.
-
-    Input: years completed, research projects, new research projects, company profit.
-
-    Initialize conditions_met = 0.
-
-    Check each condition:
-
-    If years > 1 → increment conditions_met.---If research projects ≥ 1 → increment.---If new projects ≥ 1 → increment.---If profit > 100000 → increment.
-
-    If conditions_met ≥ 3:
-
-    Input current salary.
-
-    Increase it by 20% (using bonus function).
-
-    Print new salary.
-
-    If conditions not met → Print "Not eligible for salary hike".
-
-    End.
-
-Conclusion
-We learnt to use pointers in different types of operations . We learnt about 'call by refernce ' and 'call by value' methods .
+## Conclusion
+We learned how to use *pointers* in different types of operations.  
+We understood the difference between *Call by Value* (no effect on original data) and *Call by Reference* (affects original data).
